@@ -197,7 +197,7 @@ section {
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
   color: transparent;
   -webkit-background-clip: text;
-  height: 100px;
+  height: 120px;
 }
 
 @keyframes cursor {
