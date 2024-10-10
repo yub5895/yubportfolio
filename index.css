@@ -1,0 +1,589 @@
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: background-color 0.5s ease, transform 0.8s ease;
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+header a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+#modal-content {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+#modal-container {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  top: 30%;
+  right: 30%;
+  transform: translate(-50%);
+  background-color: white;
+  z-index: 2;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+  border: none;
+  border-bottom: 0.5px solid rgba(255, 236, 210, 1);
+}
+
+#modal-header {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 10px;
+  line-height: 25px;
+  background: linear-gradient(120deg, #f6d365 20%, #fda085 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+#modal-header i {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: black;
+}
+
+#modal-main img {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 40px;
+  object-fit: contain;
+}
+
+#modal-footer {
+  width: 100%;
+  height: 100px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 15px;
+  line-height: 25px;
+  text-align: center;
+  background: linear-gradient(120deg, #f6d365 20%, #fda085 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+section {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section1 {
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#profile {
+  height: 800px;
+}
+
+#project {
+  height: 1200px;
+}
+
+#introduce {
+  height: 800px;
+}
+
+#profile .fade-wrap {
+  opacity: 0;
+  transition: 3s;
+  position: relative;
+  left: -150px;
+}
+
+#profile .fade-wrap.fade-in {
+  opacity: 1;
+  transition: 3s;
+  left: 0px;
+}
+
+#project .fade-wrap {
+  opacity: 0;
+  transition: 3s;
+  position: relative;
+  right: -150px;
+}
+
+#project .fade-wrap.fade-in {
+  opacity: 1;
+  transition: 2s;
+  right: 0px;
+}
+
+#introduce .fade-wrap {
+  opacity: 0;
+  transition: 3s;
+  position: relative;
+  left: -150px;
+}
+
+#introduce .fade-wrap.fade-in {
+  opacity: 1;
+  transition: 3s;
+  left: 0px;
+}
+
+#skill .fade-wrap {
+  opacity: 0;
+  transition: 3s;
+  position: relative;
+  right: -150px;
+}
+
+#skill .fade-wrap.fade-in {
+  opacity: 1;
+  transition: 2s;
+  right: 0px;
+}
+
+#home {
+  padding-bottom: 30px;
+}
+
+#home h1 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 100px;
+  display: inline-block;
+  animation-name: cursor;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  height: 100px;
+}
+
+@keyframes cursor {
+  0% {
+    border-right: 3px solid #fff;
+  }
+  50% {
+    border-right: 3px solid #000;
+  }
+  100% {
+    border-right: 3px solid #fff;
+  }
+}
+
+#home h2 {
+  font-size: 2rem;
+  margin-bottom: 80px;
+  font-family: "Permanent Marker", cursive;
+  font-weight: bold;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  height: 60px;
+}
+
+#home span {
+  font-size: 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Permanent Marker", cursive;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+#moving-text {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 50px;
+  white-space: nowrap;
+}
+
+#texts {
+  display: inline-block;
+  animation: moving 100s linear infinite;
+  height: 100px;
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(45%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+#sideBar {
+  position: fixed;
+  width: 100px;
+  height: 500px;
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  bottom: 50%;
+  transform: translateY(+50%);
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.5s ease;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sideBar a {
+  height: 100px;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+#sideBar #skillA {
+  border-bottom: none;
+}
+
+#sideBar #skillA:hover {
+  border-bottom: 1px solid black;
+}
+
+#sideBar a:hover {
+  background-image: linear-gradient(-225deg, #ffe6fa 0%, #e3fdf5 100%);
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+#profile h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+#profile-container {
+  width: 1200px;
+  height: 300px;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileItem {
+  width: 33.3%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileItem h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.profileItem h2 i {
+  padding-right: 10px;
+}
+
+.profileItem h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+#project h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#project h5 {
+  text-align: center;
+  margin-bottom: 70px;
+  font-family: "Hi Melody", sans-serif;
+  font-size: 20px;
+}
+
+#img-container {
+  width: 960px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  object-fit: cover;
+}
+.image {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+#image2 {
+  position: relative;
+  top: 42px;
+  width: 300px;
+  height: 300px;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: black;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.back-h3 {
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.back-skill {
+  padding-bottom: 30px;
+  font-size: 12px;
+}
+
+.back-h4 {
+  font-weight: bold;
+}
+
+.back-p {
+  padding: 5px;
+  line-height: 20px;
+}
+
+.back-work {
+  font-size: 12px;
+  padding-bottom: 30px;
+}
+
+.image.flip .front {
+  transform: rotateY(180deg);
+  transition: transform 1s;
+}
+
+.image.flip .back {
+  transform: rotateY(0);
+  transition: transform 1s;
+}
+
+#img-container img {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  display: flex;
+  transition: opacity 0.5s ease;
+}
+
+#img2 {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  display: flex;
+  transition: opacity 0.5s ease;
+}
+
+.btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: none;
+}
+
+.image:hover img {
+  opacity: 0.2;
+}
+
+.image:hover .btn {
+  display: block;
+}
+
+#introduce-container {
+  margin: 10px;
+}
+
+#introduce h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+#merit {
+  display: flex;
+}
+
+#attitude {
+  display: flex;
+}
+
+#motive {
+  display: flex;
+}
+
+#introduce h1 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.Intro1 {
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Intro2 {
+  width: 1300px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  line-height: 30px;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+#skill h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.skills {
+  display: flex;
+}
+
+.skill1 {
+  width: 200px;
+  height: 80px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.skill2 {
+  width: 800px;
+  height: 80px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+body {
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+}
+
+.permanent-marker-regular {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nanum-pen-script-regular {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hi-melody-regular {
+  font-family: "Hi Melody", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
